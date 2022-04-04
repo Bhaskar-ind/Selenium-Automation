@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Properties>
+        <Property name="APP_LOG_ROOT">D:\eclipse-workspace1\AutomationDemo\Logs\</Property>
+    </Properties>
+    <Appenders>
+        <Console name="ConsoleAppender" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%d{dd-MM-yyyy HH:mm:ss.SSS}] [%t] %-5level %logger{36}:%L - %msg%n" />
+        </Console>
+        <RollingFile name="XML_ROLLING_FILE_APPENDER"
+                     fileName="${APP_LOG_ROOT}/app.log"
+                     filePattern="${APP_LOG_ROOT}/app-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout pattern="[%d{DEFAULT}] [%t] %-5level %logger{36}:%L - %msg%n"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10MB"/>
+            </Policies>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Root level="error">
+            <AppenderRef ref="ConsoleAppender"/>
+        </Root>
+        <Logger name="com.demo" level="debug">
+            <AppenderRef ref="XML_ROLLING_FILE_APPENDER"/>
+        </Logger>
+    </Loggers>
+</Configuration>
