@@ -41,7 +41,7 @@ public class YourCartTest extends BaseClass{
 		homePage.clickOnAddToCart();
 		yourcart = new YourCart();
 		yourcart=homePage.yourCart(yourcart);
-		System.out.println(yourcart);
+		//System.out.println(yourcart);
 		boolean b=yourcart.isProductInCart();
 		Assert.assertTrue(b);
 		log.info("Verify Product In Cart Ended.....");
@@ -57,12 +57,12 @@ public class YourCartTest extends BaseClass{
 		yourcart = new YourCart();
 		yourcart=homePage.yourCart(yourcart);
 		boolean c=yourcart.isProductInCart();
-		System.out.println(c);
+		//System.out.println(c);
 		Assert.assertTrue(c);
 		//yourcart = new YourCart();
 		homePage = new HomePage();
 		homePage=yourcart.clickOnContinueShopping(homePage);
-		System.out.println(homePage);
+		//System.out.println(homePage);
 		Assert.assertNotNull(homePage);
 		log.info("Verify clickOnContinueShopping Ended........");
 	}
@@ -78,7 +78,7 @@ public class YourCartTest extends BaseClass{
 		boolean d=yourcart.isProductInCart();
 		Assert.assertTrue(d);
 		boolean yc=yourcart.clickOnRemove();
-		System.out.println(yc);
+		//System.out.println(yc);
 		Assert.assertTrue(yc);
 		log.info("Verify clickOnRemove Ended........");
 	}
