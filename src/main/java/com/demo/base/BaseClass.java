@@ -26,7 +26,7 @@ public class BaseClass {
 		try {
 			p = new Properties();
 			log.info("Loading properties file to fetch Xpath data");
-			FileInputStream fi = new FileInputStream("D:\\eclipse-workspace1\\AutomationDemo\\Configuration\\config.properties");
+			FileInputStream fi = new FileInputStream(System.getProperty("user.dir")+"\\Configuration\\config.properties");
 			p.load(fi);
 			}catch(Exception e) {
 				
